@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_provider_mvvm_state_mgt/screens/value_notifier/value_notifier_screen.dart';
 import './provider/color_provider.dart';
 import './provider/theme_change_provider.dart';
-import './screens/themeChanger/theme_change.dart';
 import './provider/count_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -41,7 +41,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.green,
               )),
-          home: ThemeChange(),
+          home: ValueNotifierScreen(),
         );
       }),
     );
