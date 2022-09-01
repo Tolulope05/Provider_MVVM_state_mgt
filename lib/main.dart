@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_mvvm_state_mgt/screens/value_notifier/value_notifier_screen.dart';
+import 'package:flutter_provider_mvvm_state_mgt/provider/auth_provider.dart';
+import 'package:flutter_provider_mvvm_state_mgt/screens/login_rest_api/login_screen.dart';
 import './provider/color_provider.dart';
 import './provider/theme_change_provider.dart';
 import './provider/count_provider.dart';
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
         ChangeNotifierProvider<ThemeChangeProvider>(
           create: (_) => ThemeChangeProvider(),
         ),
+        ChangeNotifierProvider<AuthProvider>(create: (_) => AuthProvider())
       ],
       child: Builder(builder: (context) {
         final themeChanger = Provider.of<ThemeChangeProvider>(context);
@@ -41,7 +43,7 @@ class MyApp extends StatelessWidget {
               appBarTheme: const AppBarTheme(
                 backgroundColor: Colors.green,
               )),
-          home: ValueNotifierScreen(),
+          home: LoginScreen(),
         );
       }),
     );
