@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_provider_mvvm_state_mgt/provider/count_provider.dart';
+import 'package:flutter_provider_mvvm_state_mgt/provider/color_provider.dart';
+import './provider/count_provider.dart';
 import 'package:provider/provider.dart';
 
 import 'screens/multiprovider/color_change.dart';
@@ -13,15 +14,18 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => CountProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider<CountProvider>(create: (_) => CountProvider()),
+        ChangeNotifierProvider<ColorProvider>(create: (_) => ColorProvider()),
+      ],
       child: MaterialApp(
         title: 'State Management',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const ColorChange(),
+        home: ColorChange(),
       ),
     );
   }
