@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../provider/count_provider.dart';
+import '../../provider/count_provider.dart';
 
 // ignore: slash_for_doc_comments
 /**

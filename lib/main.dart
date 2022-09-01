@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_provider_mvvm_state_mgt/provider/count_provider.dart';
 import 'package:provider/provider.dart';
 
-import 'screens/count_example_provider.dart';
+import 'screens/multiprovider/color_change.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const CountExampleProvider(),
+        home: const ColorChange(),
       ),
     );
   }
