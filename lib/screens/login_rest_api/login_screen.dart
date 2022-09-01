@@ -29,7 +29,10 @@ class LoginScreen extends StatelessWidget {
             ),
             TextFormField(
               controller: _passwordController,
-              decoration: const InputDecoration(hintText: "Password"),
+              obscureText: true,
+              decoration: const InputDecoration(
+                hintText: "Password",
+              ),
             ),
             const SizedBox(height: 10),
             InkWell(
