@@ -36,7 +36,11 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          darkTheme: ThemeData.dark(),
+          darkTheme: ThemeData.dark().copyWith(
+              primaryColor: Colors.green,
+              appBarTheme: const AppBarTheme(
+                backgroundColor: Colors.green,
+              )),
           home: ThemeChange(),
         );
       }),
