@@ -28,12 +28,12 @@ class AuthProvider with ChangeNotifier {
         setLoading(false);
         return res;
       }
-      log(response.statusCode);
+      log(response.statusCode.toString());
       Map res = jsonDecode(response.body);
       setLoading(false);
       return res;
     } catch (e) {
-      log(e);
+      log(e.toString());
       setLoading(false);
       return {"error": e.toString()};
     }
