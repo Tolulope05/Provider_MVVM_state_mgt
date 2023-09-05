@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
@@ -27,12 +28,12 @@ class AuthProvider with ChangeNotifier {
         setLoading(false);
         return res;
       }
-      print(response.statusCode);
+      log(response.statusCode);
       Map res = jsonDecode(response.body);
       setLoading(false);
       return res;
     } catch (e) {
-      print(e);
+      log(e);
       setLoading(false);
       return {"error": e.toString()};
     }
