@@ -23,7 +23,7 @@ class AuthProvider with ChangeNotifier {
         "password": password,
       });
       if (response.statusCode == 200) {
-        print(response.body);
+        log(response.body);
         Map res = jsonDecode(response.body);
         setLoading(false);
         return res;
